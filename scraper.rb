@@ -9,8 +9,7 @@ require_rel 'lib'
 
 page = MembersPage.new('http://house.gov.by/ru/deputies-ru/')
 
-while(next_path = page.next_page_url) do
-  next_url = page.absolute_url(next_path)
+while(next_url = page.next_page_url) do
   puts next_url
   page = MembersPage.new(next_url)
 end

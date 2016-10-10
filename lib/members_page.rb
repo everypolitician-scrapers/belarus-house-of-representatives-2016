@@ -2,6 +2,8 @@ require_rel 'page'
 
 class MembersPage < Page
   def next_page_url
-    noko.css('.p_next/@href').text
+    url = noko.css('.p_next/@href').text
+    return if url.empty?
+    absolute_url(url)
   end
 end
