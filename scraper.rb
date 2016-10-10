@@ -4,7 +4,8 @@
 
 require 'pry'
 require 'nokogiri'
-require 'open-uri/cached'
+#require 'open-uri/cached'
+require 'scraped_page_archive/open-uri'
 require 'field_serializer'
 
 class String
