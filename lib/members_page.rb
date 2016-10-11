@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_rel 'page'
+require_relative 'page'
 
 class MembersPage < Page
   def next_page_url
