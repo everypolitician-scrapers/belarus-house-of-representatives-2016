@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Mon, 10 Oct 2016 17:02:11 GMT
+    - Tue, 11 Oct 2016 03:47:41 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Connection:
@@ -40,8 +40,8 @@ response:
     X-Proxy-Cache:
     - '0'
     Content-Length:
-    - '6608'
+    - '5500'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Mon, 10 Oct 2016 17:02:11 GMT
+recorded_at: Tue, 11 Oct 2016 03:47:41 GMT
