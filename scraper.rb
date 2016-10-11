@@ -8,6 +8,7 @@ require 'require_all'
 require_rel 'lib'
 
 page = MembersPage.new('http://house.gov.by/ru/deputies-ru/')
+page.noko.css('.news_title.dep_fio a/@href').first.text
 
 while (next_url = page.next_page_url)
   puts next_url
