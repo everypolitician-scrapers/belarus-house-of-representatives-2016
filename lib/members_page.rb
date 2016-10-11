@@ -7,4 +7,9 @@ class MembersPage < Page
     return if url.empty?
     absolute_url(url)
   end
+
+  field :members do
+    []
+  end
+
 end
