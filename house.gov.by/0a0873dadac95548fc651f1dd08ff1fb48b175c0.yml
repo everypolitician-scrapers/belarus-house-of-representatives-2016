@@ -20,11 +20,15 @@ response:
     Server:
     - nginx
     Date:
-    - Tue, 11 Oct 2016 03:47:47 GMT
+    - Tue, 11 Oct 2016 10:19:10 GMT
     Content-Type:
     - text/html; charset=UTF-8
+    Transfer-Encoding:
+    - chunked
     Connection:
     - keep-alive
+    Set-Cookie:
+    - PHPSESSID=ptip3harn3jn24d6lpn0p1jgh3; path=/
     Expires:
     - Thu, 19 Nov 1981 08:52:00 GMT
     Cache-Control:
@@ -39,9 +43,7 @@ response:
     - "*"
     X-Proxy-Cache:
     - '0'
-    Content-Length:
-    - '5534'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 11 Oct 2016 03:47:48 GMT
+recorded_at: Tue, 11 Oct 2016 10:19:10 GMT
