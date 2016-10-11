@@ -18,7 +18,7 @@ class Page
   end
 
   def noko
-    @noko ||= Nokogiri::HTML(open(url).read)
+    @noko ||= Nokogiri::HTML(html)
   end
 
   def absolute_url(rel)
@@ -29,4 +29,8 @@ class Page
   private
 
   attr_reader :url
+
+  def html
+    open(url).read
+  end
 end
