@@ -20,13 +20,13 @@ response:
     Server:
     - nginx
     Date:
-    - Wed, 12 Oct 2016 03:43:19 GMT
+    - Thu, 13 Oct 2016 16:52:47 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Connection:
     - keep-alive
     Set-Cookie:
-    - PHPSESSID=b0o6imfutr25jcvblvtotbakp1; path=/
+    - PHPSESSID=hna3jvcd06uv2ufm6cpqr3n4d5; path=/
     Expires:
     - Thu, 19 Nov 1981 08:52:00 GMT
     Cache-Control:
@@ -37,11 +37,13 @@ response:
     - nosniff
     X-Frame-Options:
     - SAMEORIGIN
+    X-Fastcgi-Cache:
+    - MISS
     Access-Control-Allow-Origin:
     - "*"
     Content-Length:
-    - '5498'
+    - '5502'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Wed, 12 Oct 2016 03:43:20 GMT
+recorded_at: Thu, 13 Oct 2016 16:52:47 GMT
