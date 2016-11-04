@@ -22,4 +22,8 @@ class MemberPage < ScrapedPage
   field :id do
     url.split('/').last
   end
+
+  field :area do
+    noko.xpath('//div[@class="dep_info"]/b[1]/following-sibling::text()').text.tidy
+  end
 end
