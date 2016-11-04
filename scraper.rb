@@ -8,4 +8,7 @@ require 'require_all'
 require_rel 'lib'
 
 page = MembersPage.new(url: 'http://house.gov.by/ru/deputies-ru/')
-urls = page.mp_page_urls
+members = page.mp_page_urls.map do |url|
+  MemberPage.new(url: url)
+end
+binding.pry
