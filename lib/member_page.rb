@@ -18,4 +18,8 @@ class MemberPage < ScrapedPage
   field :name do
     noko.at_css('.dep_info h1').text.tidy
   end
+
+  field :id do
+    url.split('/').last
+  end
 end
