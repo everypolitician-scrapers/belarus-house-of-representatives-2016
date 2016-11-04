@@ -7,9 +7,9 @@ require 'require_all'
 
 require_rel 'lib'
 
-page = MembersPage.new('http://house.gov.by/ru/deputies-ru/')
+page = MembersPage.new(url: 'http://house.gov.by/ru/deputies-ru/')
 
 while (next_url = page.next_page_url)
   puts next_url
-  page = MembersPage.new(next_url)
+  page = MembersPage.new(url: next_url)
 end
