@@ -31,6 +31,13 @@ class MemberPage < ScrapedPage
     area_and_id[1]
   end
 
+  field :telephone do
+    contact_nodes.text
+                 .scan(/\(?\+?[0-9]+-?[0-9]+\)\s[0-9]+-[0-9]+-[0-9]+/)
+                 .map(&:tidy)
+                 .join(';')
+  end
+
   field :website do
     contact_nodes.text
                  .scan(/http:\/\/[a-z]+[.[a-z]+]+/)
