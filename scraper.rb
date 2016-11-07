@@ -4,6 +4,7 @@
 
 require 'pry'
 require 'require_all'
+require 'scraperwiki'
 
 require_rel 'lib'
 
@@ -11,4 +12,7 @@ page = MembersPage.new(url: 'http://house.gov.by/ru/deputies-ru/')
 members = page.mp_page_urls.map do |url|
   MemberPage.new(url: url)
 end
-binding.pry
+
+members.each do |member|
+  ScraperWiki.save_sqlite([:name], member.to_h)
+end
