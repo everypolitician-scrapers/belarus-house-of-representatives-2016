@@ -24,6 +24,19 @@ class MemberPage < ScrapedPage
   end
 
   field :area do
-    noko.xpath('//div[@class="dep_info"]/b[1]/following-sibling::text()').text.tidy
+    area_and_id[0]
+  end
+
+  field :area_id do
+    area_and_id[1]
+  end
+
+  private
+
+  def area_and_id
+    noko.xpath('//div[@class="dep_info"]/b[1]/following-sibling::text()')
+        .text
+        .split('№')
+        .map(&:tidy)
   end
 end
