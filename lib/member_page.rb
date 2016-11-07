@@ -31,6 +31,13 @@ class MemberPage < ScrapedPage
     area_and_id[1]
   end
 
+  field :website do
+    contact_nodes.text
+                 .scan(/http:\/\/[a-z]+[.[a-z]+]+/)
+                 .map(&:tidy)
+                 .join(';')
+  end
+
   private
 
   def area_and_id
@@ -41,6 +48,6 @@ class MemberPage < ScrapedPage
   end
 
   def contact_nodes
-     noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::*/text()')
+     noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::*')
   end
 end
