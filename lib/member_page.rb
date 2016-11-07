@@ -45,6 +45,14 @@ class MemberPage < ScrapedPage
                  .join(';')
   end
 
+  field :email do
+    contact_nodes.text
+                 .downcase
+                 .scan(/[a-z]+.?[a-z]+@[a-z]+(?:\.[a-z]+)+/)
+                 .map(&:tidy)
+                 .join(';')
+  end
+
   private
 
   def area_and_id
