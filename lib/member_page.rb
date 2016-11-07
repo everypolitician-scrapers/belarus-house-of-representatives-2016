@@ -39,4 +39,8 @@ class MemberPage < ScrapedPage
         .split('№')
         .map(&:tidy)
   end
+
+  def contact_nodes
+     noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::*/text()')
+  end
 end
