@@ -53,6 +53,9 @@ class MemberPage < ScrapedPage
                  .join(';')
   end
 
+  field :term do
+    terms[noko.xpath('//span[@class="fp_tab_selected"]').text.to_sym]
+  end
   private
 
   def area_and_id
@@ -64,5 +67,9 @@ class MemberPage < ScrapedPage
 
   def contact_nodes
      noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::*')
+  end
+
+  def terms
+    { "Шестой созыв": "6th Convocation" }
   end
 end
