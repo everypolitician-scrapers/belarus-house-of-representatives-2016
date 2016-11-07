@@ -56,6 +56,11 @@ class MemberPage < ScrapedPage
   field :term do
     terms[noko.xpath('//span[@class="fp_tab_selected"]').text.to_sym]
   end
+
+  field :term_id do
+    term_ids[noko.xpath('//span[@class="fp_tab_selected"]').text.to_sym]
+  end
+
   private
 
   def area_and_id
@@ -71,5 +76,9 @@ class MemberPage < ScrapedPage
 
   def terms
     { "Шестой созыв": "6th Convocation" }
+  end
+
+  def term_ids
+    { "Шестой созыв": 6 }
   end
 end
