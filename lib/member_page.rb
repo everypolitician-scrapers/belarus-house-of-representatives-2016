@@ -27,7 +27,7 @@ class MemberPage < ScrapedPage
   end
 
   field :id do
-    name_and_id.split('-').pop
+    name_and_id.split('-').last
   end
 
   field :area do
