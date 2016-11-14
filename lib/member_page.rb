@@ -58,7 +58,7 @@ class MemberPage < ScrapedPage
     # The regex makes the naive assumption that any string begining with
     # http:// followed by a sequence of dots and letters is a web address.
     contact_nodes.text
-                 .scan(/http:\/\/[a-z]+[\.[a-z]+]+/)
+                 .scan(/http:\/\/(?:\w|\d)+[\.(?:\w|\d)+]+/)
                  .map(&:tidy)
                  .join(';')
   end
