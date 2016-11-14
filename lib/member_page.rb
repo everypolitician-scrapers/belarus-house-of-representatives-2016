@@ -17,6 +17,7 @@ class MemberPage < ScrapedPage
 
   field :name do
     name_and_id.split('-')[0..-2]
+               .reject { |w| w == 'ru' }
                .map(&:capitalize)
                .join(' ')
   end
