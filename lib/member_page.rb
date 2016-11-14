@@ -39,6 +39,12 @@ class MemberPage < ScrapedPage
   end
 
   field :telephone do
+    # The markdown within the target div is non-semantic and inconsistent
+    # from page to page. Splitting by preceding characters does not work
+    # because preceding characters vary.
+    # Any phone number in one of the two telephone formats on the site
+    # ( (x-xxxx) xx-xx-xx & (+xxxxx) xxx-xx-xx ) will be matched by the regex.
+    # Multiple numbers will be joined by a semi-colon.
     contact_nodes.text
                  .scan(/\(?\+?[0-9]+-?[0-9]+\)\s[0-9]+-[0-9]+-[0-9]+/)
                  .map(&:tidy)
