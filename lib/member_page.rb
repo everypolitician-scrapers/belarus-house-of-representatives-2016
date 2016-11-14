@@ -15,7 +15,7 @@ class MemberPage < ScrapedPage
     noko.at_css('.dep_img img/@src').text.tidy
   end
 
-  field :name do
+  field :name_ru do
     noko.at_css('.dep_info h1').text.tidy
   end
 
