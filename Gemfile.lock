@@ -6,8 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/everypolitician/scraped_page.git
-  revision: 82b0ca35d2f7e315a9b0d62c2321ab586bc02bb1
-  branch: prototype
+  revision: 6eb806c01e8b9f3e333575a639e40a68be60ae48
   specs:
     scraped_page (0.1.0)
       field_serializer
@@ -16,8 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/everypolitician/scraped_page_archive.git
-  revision: 5db587e6220b65c6509cd22998958a3d81f20309
-  branch: version-0.5.0
+  revision: 28f93d74b1c11ef01463ad0e7f874050d2e7fc73
   specs:
     scraped_page_archive (0.5.0)
       git (~> 1.3.0)
@@ -35,7 +33,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.4.0)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     ast (2.3.0)
     coderay (1.1.0)
     colorize (0.7.7)
@@ -56,6 +55,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.4)
     rainbow (2.1.0)
     require_all (1.3.3)
     rubocop (0.43.0)
