@@ -66,11 +66,9 @@ class MemberPage < ScrapedPage
   field :email do
     # Again, capturing using regex avoids problems of inconsistent
     # formatting.
-    # I see that addresses currently consist of characters [a-z] and that
-    # none contain cyrillic or numerals.
     contact_nodes.text
                  .downcase
-                 .scan(/[a-z]+.?[a-z]+@[a-z]+(?:\.[a-z]+)+/)
+                 .scan(/(?:\w|\d)+.?(?:\w|\d)+@(?:\w|\d)+(?:\.(?:\w|\d)+)+/)
                  .map(&:tidy)
                  .join(';')
   end
