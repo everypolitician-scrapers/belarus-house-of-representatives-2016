@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 require 'nokogiri'
-# require 'open-uri/cached'
-# require 'scraped_page_archive/open-uri'
-require 'field_serializer'
+require 'scraped_page'
 
 class String
   def tidy
