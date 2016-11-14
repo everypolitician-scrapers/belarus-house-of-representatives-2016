@@ -7,7 +7,7 @@ class String
 end
 
 class MemberPage < ScrapedPage
-  field :url do
+  field :source do
     url
   end
 
