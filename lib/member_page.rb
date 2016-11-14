@@ -26,7 +26,7 @@ class MemberPage < ScrapedPage
   end
 
   field :id do
-    url.split('/').last
+    name_and_id.split('-').pop
   end
 
   field :area do
