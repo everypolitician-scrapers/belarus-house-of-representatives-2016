@@ -61,11 +61,11 @@ class MemberPage < ScrapedPage
   end
 
   field :term do
-    terms[noko.xpath('//span[@class="fp_tab_selected"]').text.to_sym]
+    terms[russian_term_name.to_sym]
   end
 
   field :term_id do
-    term_ids[noko.xpath('//span[@class="fp_tab_selected"]').text.to_sym]
+    term_ids[russian_term_name.to_sym]
   end
 
   private
@@ -75,6 +75,10 @@ class MemberPage < ScrapedPage
         .text
         .split('№')
         .map(&:tidy)
+  end
+
+  def russian_term_name
+    noko.xpath('//div[@class="tabs"]/span[contains(@class,"fp_tab_selected")]').text
   end
 
   def contact_nodes
