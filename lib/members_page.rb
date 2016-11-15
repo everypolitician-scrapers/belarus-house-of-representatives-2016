@@ -4,7 +4,7 @@ require 'scraped_page'
 class MembersPage < ScrapedPage
 
   def mp_page_urls
-    urls = noko.css('.news_title.dep_fio a/@href').map(&:text)
+    noko.css('.news_title.dep_fio a/@href').map(&:text)
   end
 
   def next_page_url
