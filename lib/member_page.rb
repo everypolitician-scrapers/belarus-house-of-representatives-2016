@@ -1,4 +1,5 @@
 require 'scraped_page'
+require_relative 'contact_info'
 
 class String
   def tidy
@@ -94,8 +95,8 @@ class MemberPage < ScrapedPage
     noko.xpath('//div[@class="tabs"]/span[contains(@class,"fp_tab_selected")]').text
   end
 
-  def contact_nodes
-     noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::*')
+  def contact_info
+     @contact_info ||= ContactInfo.new(noko.xpath('//div[@class="rcb_title" and contains(.,"Контакты")]//following-sibling::node()'))
   end
 
   def terms
