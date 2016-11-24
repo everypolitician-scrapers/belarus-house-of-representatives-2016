@@ -12,8 +12,8 @@ class ContactInfo
   end
 
   def website_addresses
-    body_text.select do |str|
-      str.include?('http')
+    just_addresses(lines_containing('http')).flat_map do |str|
+      str.split(',')
     end
   end
 
