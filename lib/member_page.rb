@@ -65,13 +65,7 @@ class MemberPage < ScrapedPage
   end
 
   field :email do
-    # Again, capturing using regex avoids problems of inconsistent
-    # formatting.
-    contact_nodes.text
-                 .downcase
-                 .scan(/(?:\w|\d)+.?(?:\w|\d)+@(?:\w|\d)+(?:\.(?:\w|\d)+)+/)
-                 .map(&:tidy)
-                 .join(';')
+    contact_info.email_addresses.map(&:tidy).join(';')
   end
 
   field :term do
