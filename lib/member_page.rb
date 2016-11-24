@@ -53,15 +53,7 @@ class MemberPage < ScrapedPage
   end
 
   field :website do
-    # The markdown within the target div is non-semantic and inconsistent
-    # from page to page. Splitting by preceding characters does not work
-    # because preceding characters vary.
-    # The regex makes the naive assumption that any string begining with
-    # http:// followed by a sequence of dots and letters is a web address.
-    contact_nodes.text
-                 .scan(/http:\/\/(?:\w|\d)+[\.(?:\w|\d)+]+/)
-                 .map(&:tidy)
-                 .join(';')
+    contact_info.website_addresses.map(&:tidy).join(';')
   end
 
   field :email do
