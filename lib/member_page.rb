@@ -1,4 +1,4 @@
-require 'scraped_page'
+require 'scraped'
 require_relative 'contact_info'
 
 class String
@@ -7,7 +7,7 @@ class String
   end
 end
 
-class MemberPage < ScrapedPage
+class MemberPage < Scraped::HTML
   field :source do
     url
   end

@@ -8,7 +8,11 @@ require 'scraperwiki'
 
 require_rel 'lib'
 
-MembersPage.new(url: 'http://house.gov.by/ru/deputies-ru/')
+MembersPage.new(
+  response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
+)
            .mp_page_urls.each do |url|
-             ScraperWiki.save_sqlite([:name], MemberPage.new(url: url).to_h)
+             ScraperWiki.save_sqlite([:name], MemberPage.new(
+               response: Scraped::Request.new(url: url).response
+             ).to_h)
            end
