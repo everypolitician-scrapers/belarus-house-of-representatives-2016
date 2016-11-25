@@ -11,7 +11,7 @@ require_rel 'lib'
 MembersPage.new(
   response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
 )
-           .mp_page_urls.each do |url|
+           .to_h[:mp_page_urls].each do |url|
              ScraperWiki.save_sqlite([:name], MemberPage.new(
                response: Scraped::Request.new(url: url).response
              ).to_h)

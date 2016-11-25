@@ -3,7 +3,7 @@ require 'scraped'
 
 class MembersPage < Scraped::HTML
 
-  def mp_page_urls
+  field :mp_page_urls do
     noko.css('.news_title.dep_fio a/@href').map(&:text)
   end
 end
