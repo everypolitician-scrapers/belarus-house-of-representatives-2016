@@ -6,12 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 ruby '2.3.1'
 
 gem 'colorize'
-gem 'field_serializer', github: 'everypolitician/field_serializer'
-gem 'nokogiri'
-gem 'open-uri-cached'
 gem 'pry'
 gem 'require_all'
 gem 'rubocop'
-gem 'scraped_page', github: 'everypolitician/scraped_page'
 gem 'scraperwiki', github: 'openaustralia/scraperwiki-ruby', branch: 'morph_defaults'
 gem 'scraped', github: 'everypolitician/scraped'
