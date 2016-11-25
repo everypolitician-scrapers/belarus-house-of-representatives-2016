@@ -5,6 +5,16 @@ GIT
     field_serializer (0.1.0)
 
 GIT
+  remote: https://github.com/everypolitician/scraped.git
+  revision: 26ee2a938ce0ed7cd91afd373dba987dfd4139fb
+  specs:
+    scraped (0.1.0)
+      field_serializer
+      nokogiri
+      require_all
+      scraped_page_archive (>= 0.5)
+
+GIT
   remote: https://github.com/everypolitician/scraped_page.git
   revision: 6eb806c01e8b9f3e333575a639e40a68be60ae48
   specs:
@@ -86,6 +96,7 @@ DEPENDENCIES
   pry
   require_all
   rubocop
+  scraped!
   scraped_page!
   scraperwiki!
 
