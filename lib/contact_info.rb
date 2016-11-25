@@ -8,6 +8,7 @@ class ContactInfo
   def email_addresses
     just_addresses(lines_containing('@')).flat_map do |str|
       str.split(',')
+         .map { |i| i.gsub(/\.$/, '') }
     end
   end
 
