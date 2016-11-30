@@ -7,9 +7,9 @@ require 'require_all'
 
 require_rel 'lib'
 
-page = MembersPage.new('http://house.gov.by/ru/deputies-ru/')
+page = MembersPage.new(response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response)
 
 while (next_url = page.next_page_url)
   puts next_url
-  page = MembersPage.new(next_url)
+  page = MembersPage.new(response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response)
 end
