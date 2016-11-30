@@ -5,6 +5,7 @@
 require 'pry'
 require 'require_all'
 require 'scraperwiki'
+require 'scraped_page_archive'
 
 require_rel 'lib'
 
