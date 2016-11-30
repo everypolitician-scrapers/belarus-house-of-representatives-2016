@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-require_rel 'page'
+require 'scraped'
 
-class MembersPage < Page
+class MembersPage < Scraped::HTML
   def next_page_url
     url = noko.css('.p_next/@href').text
     return if url.empty?
-    absolute_url(url)
+    url
   end
 end
