@@ -7,7 +7,12 @@ require 'require_all'
 
 require_rel 'lib'
 
-page = MembersPage.new(response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response)
+page = MembersPage.new(
+  response: Scraped::Request.new(
+    url: 'http://house.gov.by/ru/deputies-ru/'
+  )
+                             .response(decorators: [AbsoluteLinks])
+)
 
 while (next_url = page.next_page_url)
   puts next_url
