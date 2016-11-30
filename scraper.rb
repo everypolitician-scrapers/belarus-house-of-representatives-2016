@@ -13,8 +13,3 @@ page = MembersPage.new(
   )
                              .response(decorators: [AbsoluteLinks])
 )
-
-while (next_url = page.next_page_url)
-  puts next_url
-  page = MembersPage.new(response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response)
-end
