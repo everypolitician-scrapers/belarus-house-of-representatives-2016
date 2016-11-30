@@ -4,12 +4,17 @@
 
 require 'pry'
 require 'require_all'
+require 'scraperwiki'
+require 'scraped_page_archive'
 
 require_rel 'lib'
 
-page = MembersPage.new('http://house.gov.by/ru/deputies-ru/')
-
-while (next_url = page.next_page_url)
-  puts next_url
-  page = MembersPage.new(next_url)
+MembersPage.new(
+  response: Scraped::Request.new(
+    url: 'http://house.gov.by/ru/deputies-ru/'
+  )
+                             .response(decorators: [AbsoluteLinks])
+).member_urls.each do |member_url|
+  member_page = MemberPage.new(response: Scraped::Request.new(url: member_url).response)
+  ScraperWiki.save_sqlite([:id, :term], member_page.to_h)
 end
