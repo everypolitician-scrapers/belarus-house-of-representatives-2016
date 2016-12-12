@@ -13,3 +13,5 @@ page = MembersPage.new(
   )
                              .response(decorators: [AbsoluteLinks])
 )
+
+puts page.member_urls
