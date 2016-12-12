@@ -11,8 +11,7 @@ require_rel 'lib'
 page = MembersPage.new(
   response: Scraped::Request.new(
     url: 'http://house.gov.by/ru/deputies-ru/'
-  )
-                             .response(decorators: [AbsoluteLinks])
+  ).response
 )
 
 puts page.member_urls
