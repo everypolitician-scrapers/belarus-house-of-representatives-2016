@@ -4,6 +4,7 @@
 
 require 'pry'
 require 'require_all'
+require 'scraped_page_archive/open-uri'
 
 require_rel 'lib'
 
