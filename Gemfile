@@ -12,5 +12,7 @@ gem 'open-uri-cached'
 gem 'pry'
 gem 'require_all'
 gem 'rubocop'
+gem 'scraped', github: 'everypolitician/scraped'
 gem 'scraped_page_archive', github: 'everypolitician/scraped_page_archive'
-gem 'scraperwiki', github: 'openaustralia/scraperwiki-ruby', branch: 'morph_defaults'
+gem 'scraperwiki', github: 'openaustralia/scraperwiki-ruby',
+                   branch: 'morph_defaults'
