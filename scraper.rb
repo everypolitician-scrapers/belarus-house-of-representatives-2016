@@ -8,10 +8,11 @@ require 'scraped_page_archive/open-uri'
 
 require_rel 'lib'
 
-page = MembersPage.new(
+MembersPage.new(
   response: Scraped::Request.new(
     url: 'http://house.gov.by/ru/deputies-ru/'
-  ).response
-)
-
-puts page.member_urls
+  )
+                             .response(decorators: [AbsoluteLinks])
+).member_urls.each do |member_url|
+  member_page = MemberPage.new(response: Scraped::Request.new(url: member_url).response)
+end
