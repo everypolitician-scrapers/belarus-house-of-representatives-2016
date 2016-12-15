@@ -5,6 +5,7 @@
 require 'pry'
 require 'require_all'
 require 'scraped_page_archive/open-uri'
+require 'scraperwiki'
 
 require_rel 'lib'
 
@@ -14,5 +15,7 @@ MembersPage.new(
   )
                              .response(decorators: [AbsoluteLinks])
 ).member_urls.each do |member_url|
-  member_page = MemberPage.new(response: Scraped::Request.new(url: member_url).response)
+  response = Scraped::Request.new(url: member_url).response
+  member_page = MemberPage.new(response: response)
+  ScraperWiki.save_sqlite(%i(id term), member_page.to_h)
 end
