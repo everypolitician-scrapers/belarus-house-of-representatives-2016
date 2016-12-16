@@ -10,6 +10,8 @@ end
 class MemberPage < Scraped::HTML
   decorator Scraped::Response::Decorator::AbsoluteUrls
   # TODO: Add contact info
+  # Issue:
+  # https://github.com/everypolitician/everypolitician-data/issues/22638
   field :id do
     url_slug.split('-').last
   end
