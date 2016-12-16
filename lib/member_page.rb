@@ -8,6 +8,7 @@ class String
 end
 
 class MemberPage < Scraped::HTML
+  decorator Scraped::Response::Decorator::AbsoluteUrls
   # TODO: Add contact info
   field :source do
     url

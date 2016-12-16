@@ -10,10 +10,7 @@ require 'scraperwiki'
 require_rel 'lib'
 
 MembersPage.new(
-  response: Scraped::Request.new(
-    url: 'http://house.gov.by/ru/deputies-ru/'
-  )
-                             .response(decorators: [AbsoluteLinks])
+  response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
 ).member_urls.each do |member_url|
   response = Scraped::Request.new(url: member_url).response
   member_page = MemberPage.new(response: response)
