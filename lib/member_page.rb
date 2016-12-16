@@ -19,9 +19,9 @@ class MemberPage < Scraped::HTML
   end
 
   field :name do
-    name_and_id.split('-')[0..-2]
-               .map(&:upcase)
-               .join(' ')
+    url_slug.split('-')[0..-2]
+            .map(&:upcase)
+            .join(' ')
   end
 
   field :name__ru do
@@ -29,7 +29,7 @@ class MemberPage < Scraped::HTML
   end
 
   field :id do
-    name_and_id.split('-').last
+    url_slug.split('-').last
   end
 
   field :area do
@@ -53,7 +53,7 @@ class MemberPage < Scraped::HTML
         .map(&:tidy)
   end
 
-  def name_and_id
-    url.split('/')[-1]
+  def url_slug
+    url.split('/').last
   end
 end
