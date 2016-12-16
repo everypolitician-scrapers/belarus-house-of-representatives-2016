@@ -40,10 +40,6 @@ class MemberPage < Scraped::HTML
     area_and_id[1]
   end
 
-  field :term do
-    terms[russian_term_name.to_sym]
-  end
-
   field :term_id do
     term_ids[russian_term_name.to_sym]
   end
@@ -60,10 +56,6 @@ class MemberPage < Scraped::HTML
   def russian_term_name
     noko.xpath('//div[@class="tabs"]/span[contains(@class,"fp_tab_selected")]')
         .text
-  end
-
-  def terms
-    { "Шестой созыв": '6th Convocation' }
   end
 
   def term_ids
