@@ -10,12 +10,8 @@ end
 class MemberPage < Scraped::HTML
   decorator Scraped::Response::Decorator::AbsoluteUrls
   # TODO: Add contact info
-  field :source do
-    url
-  end
-
-  field :image do
-    noko.at_css('.dep_img img/@src').text.tidy
+  field :id do
+    url_slug.split('-').last
   end
 
   field :name do
@@ -28,8 +24,8 @@ class MemberPage < Scraped::HTML
     noko.at_css('.dep_info h1').text.tidy
   end
 
-  field :id do
-    url_slug.split('-').last
+  field :term_id do
+    6
   end
 
   field :area do
@@ -40,8 +36,12 @@ class MemberPage < Scraped::HTML
     area_and_id[1]
   end
 
-  field :term_id do
-    6
+  field :image do
+    noko.at_css('.dep_img img/@src').text.tidy
+  end
+
+  field :source do
+    url
   end
 
   private
