@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 require 'scraped'
 
-class String
-  def tidy
-    gsub(/[[:space:]]+/, ' ').strip
-  end
-end
-
 class MemberPage < Scraped::HTML
   decorator Scraped::Response::Decorator::AbsoluteUrls
   # TODO: Add contact info
