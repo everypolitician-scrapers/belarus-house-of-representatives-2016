@@ -9,6 +9,8 @@ require 'scraperwiki'
 
 require_rel 'lib'
 
+ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
+
 MembersPage.new(
   response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
 ).member_urls.each do |member_url|
