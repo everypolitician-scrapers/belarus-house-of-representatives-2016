@@ -13,6 +13,7 @@ MembersPage.new(
   response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
 ).member_urls.each do |member_url|
   response = Scraped::Request.new(url: member_url).response
-  member_page = MemberPage.new(response: response)
-  ScraperWiki.save_sqlite(%i(id term), member_page.to_h)
+  data = MemberPage.new(response: response).to_h.merge(term_id: 6)
+  puts data
+  ScraperWiki.save_sqlite(%i(id term), data)
 end

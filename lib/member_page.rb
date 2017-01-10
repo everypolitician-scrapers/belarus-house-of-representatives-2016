@@ -20,10 +20,6 @@ class MemberPage < Scraped::HTML
     noko.at_css('.dep_info h1').text.tidy
   end
 
-  field :term_id do
-    6
-  end
-
   field :area do
     area_and_id[0]
   end
