@@ -45,6 +45,9 @@ GEM
     httpclient (2.8.3)
     method_source (0.8.2)
     mini_portile2 (2.1.0)
+    minitest (5.10.1)
+    minitest-around (0.4.0)
+      minitest (~> 5.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     open-uri-cached (0.0.5)
@@ -87,6 +90,7 @@ PLATFORMS
 DEPENDENCIES
   colorize
   field_serializer!
+  minitest-around
   nokogiri
   open-uri-cached
   pry

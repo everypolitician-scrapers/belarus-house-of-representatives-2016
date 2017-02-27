@@ -7,6 +7,7 @@ ruby '2.3.3'
 
 gem 'colorize'
 gem 'field_serializer', github: 'everypolitician/field_serializer'
+gem 'minitest-around'
 gem 'nokogiri'
 gem 'open-uri-cached'
 gem 'pry'
