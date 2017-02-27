@@ -1,4 +1,6 @@
 language: ruby
+script:
+  - bundle exec rake rubocop
 rvm:
   - 2.3.3
 sudo: false
