@@ -9,7 +9,7 @@ describe MembersPage do
     MembersPage.new(response: Scraped::Request.new(url: url).response)
   end
 
-  let(:url) { 'http://house.gov.by/ru/deputies-ru/' }
+  let(:url) { 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15' }
 
   it 'should contain the expected number of urls' do
     subject.member_urls.count.must_equal 110
