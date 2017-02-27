@@ -12,7 +12,7 @@ require_rel 'lib'
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 
 MembersPage.new(
-  response: Scraped::Request.new(url: 'http://house.gov.by/ru/deputies-ru/').response
+  response: Scraped::Request.new(url: 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15/').response
 ).member_urls.each do |member_url|
   response = Scraped::Request.new(url: member_url).response
   data = MemberPage.new(response: response).to_h.merge(term: 6)
