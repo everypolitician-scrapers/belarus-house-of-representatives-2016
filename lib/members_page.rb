@@ -4,6 +4,6 @@ require 'scraped'
 class MembersPage < Scraped::HTML
   decorator Scraped::Response::Decorator::AbsoluteUrls
   field :member_urls do
-    noko.css('#by_alf_info .news_item > a/@href').map(&:text)
+    noko.xpath('//div[contains(@id,"by_alf_inner")]/div[contains(@class,"news_item_second")]/a/@href').map(&:text)
   end
 end
