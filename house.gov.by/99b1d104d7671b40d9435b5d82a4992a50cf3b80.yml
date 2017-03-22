@@ -20,13 +20,15 @@ response:
     Server:
     - nginx
     Date:
-    - Tue, 21 Mar 2017 02:35:35 GMT
+    - Wed, 22 Mar 2017 11:20:17 GMT
     Content-Type:
     - text/html; charset=UTF-8
+    Transfer-Encoding:
+    - chunked
     Connection:
     - keep-alive
     Set-Cookie:
-    - PHPSESSID=sl9f369g4sl2ndt8cm6f4f3rt3; path=/
+    - PHPSESSID=41fcge59g8u7mcpteb7bng6q13; path=/
     Expires:
     - Thu, 19 Nov 1981 08:52:00 GMT
     Cache-Control:
@@ -41,9 +43,7 @@ response:
     - MISS
     Access-Control-Allow-Origin:
     - "*"
-    Content-Length:
-    - '6485'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 21 Mar 2017 02:35:36 GMT
+recorded_at: Wed, 22 Mar 2017 11:20:17 GMT
