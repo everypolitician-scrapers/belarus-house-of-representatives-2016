@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Wed, 22 Mar 2017 12:25:06 GMT
+    - Thu, 23 Mar 2017 16:31:12 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Transfer-Encoding:
@@ -28,7 +28,7 @@ response:
     Connection:
     - keep-alive
     Set-Cookie:
-    - PHPSESSID=qnioutoa4ihsjv3j7nod63u9o5; path=/
+    - PHPSESSID=2tp6tlfcrujo7pf6hbc0tis8k1; path=/
     Expires:
     - Thu, 19 Nov 1981 08:52:00 GMT
     Cache-Control:
@@ -40,10 +40,10 @@ response:
     X-Frame-Options:
     - SAMEORIGIN
     X-Fastcgi-Cache:
-    - MISS
+    - EXPIRED
     Access-Control-Allow-Origin:
     - "*"
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Wed, 22 Mar 2017 12:25:07 GMT
+recorded_at: Thu, 23 Mar 2017 16:31:13 GMT
