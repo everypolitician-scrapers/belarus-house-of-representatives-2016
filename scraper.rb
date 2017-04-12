@@ -9,7 +9,7 @@ require 'scraperwiki'
 
 require_rel 'lib'
 
-ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 
 MembersPage.new(
   response: Scraped::Request.new(url: 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15/').response
