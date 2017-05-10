@@ -16,5 +16,5 @@ MembersPage.new(
 ).member_urls.each do |member_url|
   response = Scraped::Request.new(url: member_url).response
   data = MemberPage.new(response: response).to_h.merge(term: 6)
-  ScraperWiki.save_sqlite(%i(id term), data)
+  ScraperWiki.save_sqlite(%i[id term], data)
 end
