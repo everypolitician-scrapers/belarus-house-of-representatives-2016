@@ -4,17 +4,13 @@ require 'scraped'
 
 class MemberPage < Scraped::HTML
   decorator Scraped::Response::Decorator::CleanUrls
-  # TODO: Add contact info
-  # Issue:
-  # https://github.com/everypolitician/everypolitician-data/issues/22638
+
   field :id do
     url_slug.split('-').last
   end
 
   field :name do
-    url_slug.split('-')[0..-2]
-            .map(&:upcase)
-            .join(' ')
+    url_slug.split('-').tap(&:pop).map(&:upcase).join(' ')
   end
 
   field :name__ru do
@@ -32,6 +28,13 @@ class MemberPage < Scraped::HTML
   field :image do
     noko.at_css('.dep_img img/@src').text.tidy
   end
+
+  field :email do
+    noko.css('.right_col_block a[href*=mailto]').map(&:text).first
+  end
+
+  # TODO: Add phone number
+  # https://github.com/everypolitician/everypolitician-data/issues/22638
 
   field :source do
     url
