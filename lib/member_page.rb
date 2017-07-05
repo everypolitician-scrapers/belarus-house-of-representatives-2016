@@ -3,7 +3,7 @@
 require 'scraped'
 
 class MemberPage < Scraped::HTML
-  decorator Scraped::Response::Decorator::AbsoluteUrls
+  decorator Scraped::Response::Decorator::CleanUrls
   # TODO: Add contact info
   # Issue:
   # https://github.com/everypolitician/everypolitician-data/issues/22638
