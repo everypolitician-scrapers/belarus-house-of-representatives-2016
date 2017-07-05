@@ -17,7 +17,7 @@ def scrape(h)
   klass.new(response: Scraped::Request.new(url: url).response)
 end
 
-start = 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15/'
+start = 'http://house.gov.by/ru/deputies-ru/'
 data = scrape(start => MembersPage).member_urls.map do |member_url|
   scrape(member_url => MemberPage).to_h.merge(term: 6)
 end
