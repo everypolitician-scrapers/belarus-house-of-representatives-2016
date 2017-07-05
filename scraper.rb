@@ -4,17 +4,24 @@
 
 require 'pry'
 require 'require_all'
-require 'scraped_page_archive/open-uri'
 require 'scraperwiki'
+
+require 'scraped_page_archive/open-uri'
+# require 'open-uri/cached'
+# OpenURI::Cache.cache_path = '.cache'
 
 require_rel 'lib'
 
-ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
-
-MembersPage.new(
-  response: Scraped::Request.new(url: 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15/').response
-).member_urls.each do |member_url|
-  response = Scraped::Request.new(url: member_url).response
-  data = MemberPage.new(response: response).to_h.merge(term: 6)
-  ScraperWiki.save_sqlite(%i[id term], data)
+def scrape(h)
+  url, klass = h.to_a.first
+  klass.new(response: Scraped::Request.new(url: url).response)
 end
+
+start = 'http://house.gov.by/ru/sozyvy-ru/view/shestoj-sozyv-15/'
+data = scrape(start => MembersPage).member_urls.map do |member_url|
+  scrape(member_url => MemberPage).to_h.merge(term: 6)
+end
+data.each { |mem| puts mem.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h } if ENV['MORPH_DEBUG']
+
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
+ScraperWiki.save_sqlite(%i[id term], data)
