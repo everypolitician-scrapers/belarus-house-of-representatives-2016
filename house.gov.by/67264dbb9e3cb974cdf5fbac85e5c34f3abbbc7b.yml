@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Wed, 06 Dec 2017 10:27:52 GMT
+    - Fri, 08 Dec 2017 11:10:13 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Transfer-Encoding:
@@ -30,7 +30,7 @@ response:
     Vary:
     - Accept-Encoding
     Set-Cookie:
-    - PHPSESSID=lt4kmacq8ltbs485jlb2vl2ll6; path=/
+    - PHPSESSID=b4c3e6lt75jro55puml6fiomj3; path=/
     Expires:
     - Thu, 19 Nov 1981 08:52:00 GMT
     Cache-Control:
@@ -48,4 +48,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Wed, 06 Dec 2017 10:27:53 GMT
+recorded_at: Fri, 08 Dec 2017 11:10:14 GMT
