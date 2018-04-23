@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Mon, 23 Apr 2018 20:45:56 GMT
+    - Mon, 23 Apr 2018 22:40:58 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Connection:
@@ -38,7 +38,7 @@ response:
     X-Frame-Options:
     - SAMEORIGIN
     X-Fastcgi-Cache:
-    - HIT
+    - UPDATING
     Access-Control-Allow-Origin:
     - "*"
     Content-Length:
@@ -46,4 +46,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Mon, 23 Apr 2018 20:45:56 GMT
+recorded_at: Mon, 23 Apr 2018 22:40:58 GMT
