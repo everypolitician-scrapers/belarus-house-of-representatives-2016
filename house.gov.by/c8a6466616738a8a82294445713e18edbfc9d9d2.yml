@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Tue, 10 Jul 2018 13:51:51 GMT
+    - Tue, 10 Jul 2018 15:15:33 GMT
     Content-Type:
     - text/html; charset=UTF-8
     Connection:
@@ -40,7 +40,7 @@ response:
     X-Frame-Options:
     - SAMEORIGIN
     X-Fastcgi-Cache:
-    - EXPIRED
+    - UPDATING
     Access-Control-Allow-Origin:
     - "*"
     Content-Length:
@@ -48,4 +48,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 10 Jul 2018 13:51:52 GMT
+recorded_at: Tue, 10 Jul 2018 15:15:33 GMT
